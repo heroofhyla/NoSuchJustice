@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walksprite.png-dc4cbc06d397376e5cffc4b75880f2b3.stex"
+path="res://.import/buddy.png-b289a13d5ccc81b8a4dbc3d28896ba24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/walksprite.png"
-dest_files=[ "res://.import/walksprite.png-dc4cbc06d397376e5cffc4b75880f2b3.stex" ]
+source_file="res://img/buddy.png"
+dest_files=[ "res://.import/buddy.png-b289a13d5ccc81b8a4dbc3d28896ba24.stex" ]
 
 [params]
 

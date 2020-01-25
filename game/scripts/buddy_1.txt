@@ -1,0 +1,4 @@
+portrait right buddy
+portrait left hero
+message right: "Hey, how's it going?"
+message left: "Same as always."
