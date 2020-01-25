@@ -1,11 +1,46 @@
 portrait left hero
 portrait right buddy
-message left Why the heck are there two of you?
-message right Huh? What do you mean?
-message left I mean there's two of you.
-message right Oh, right. That.
-message right Well, you see, I read this really funny joke.
-message right Now I'm *beside* myself with laughter.
-message right Get it? Beside myself?
-message left ...
-message left That's not funny.
+
+jumpif quest_done @gave_secret == true
+jumpif reveal_secret @know_secret == true
+jumpif reminder @need_secret == true
+
+message right Hey there!
+
+jumpif met @met_trevor == true
+
+thought left This is Trevor.
+thought left He and his brother Winston live nextdoor.
+set @met_trevor true
+
+label met
+message left What's up? Things okay in this neck of the woods?
+message right Well, I can't remember the combination to my locker.
+message left Dang, that sucks. 
+message left Did you write it down somewhere?
+message right Hm ...
+message right Oh yeah!
+message right My brother might know. Could you ask him?
+message left Yeah, okay.
+set @need_secret true
+finish
+
+
+label reminder
+message right Any luck finding my locker combination?
+message left Not yet.
+message right Try asking my brother about it.
+finish
+
+
+label reveal_secret
+message left I asked your brother about the combination.
+message right Any luck?
+message left Yeah, the combo is 23-19-49.
+message right Thanks! You're a real life-saver.
+set @gave_secret true
+finish
+
+
+label quest_done
+message right Hey, thanks for the help today. I owe you.

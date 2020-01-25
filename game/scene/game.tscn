@@ -39,11 +39,11 @@ position = Vector2( 642.165, 610.704 )
 shape = SubResource( 3 )
 
 [node name="Buddy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 658.629, 316.736 )
+position = Vector2( 1010.87, 438.909 )
 event_script = "buddy_1"
 
 [node name="Buddy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 569.004, 320.419 )
+position = Vector2( 350.043, 253.779 )
 event_script = "buddy_2"
 
 [node name="EventSystem" parent="." instance=ExtResource( 4 )]

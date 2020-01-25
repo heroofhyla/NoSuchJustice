@@ -1,4 +1,38 @@
 portrait left hero
 portrait right buddy
+
+jumpif quest_done @gave_secret == true
+jumpif know_combo @know_secret == true
+jumpif ask_for_combo @need_secret == true
+
 message right Hey, how's it going?
 message left Same as always.
+jumpif met @met_winston == true
+thought left This is Winston. 
+thought left I've known him and his brother Trevor since elementary school.
+set @met_winston true
+label met
+finish
+
+
+label ask_for_combo
+message right What's shakin'?
+jumpif met2 @met_winston == true
+thought left This is Winston.
+thought left I've known him and his brother Trevor since elementary school.
+label met2
+message left Hey, your bro doesn't remember his locker combo.
+message right Ugh, again?
+message right Well, it's 23-19-49.
+message right Don't forget it!
+set @know_secret true
+finish
+
+
+label know_combo
+message right Remember, the combo's 23-19-49.
+finish
+
+
+label quest_done
+message right Let's hope he doesn't forget again.
