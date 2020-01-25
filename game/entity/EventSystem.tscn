@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 
 [node name="TextHolder" type="Node2D" parent="."]
 visible = false
+position = Vector2( 8.46, 0 )
 z_index = 2200
 
 [node name="Text" type="Label" parent="TextHolder"]
@@ -28,14 +29,15 @@ autowrap = true
 
 [node name="RightPortrait" type="Sprite" parent="."]
 visible = false
-position = Vector2( 891, 0 )
+position = Vector2( 1056.37, 0 )
 z_index = 2000
 texture = ExtResource( 3 )
 offset = Vector2( 0, 360 )
+flip_h = true
 
 [node name="LeftPortrait" type="Sprite" parent="."]
 visible = false
-position = Vector2( 300, 0 )
+position = Vector2( 217.91, 0 )
 z_index = 2000
 texture = ExtResource( 3 )
 offset = Vector2( 0, 360 )

@@ -1,0 +1,17 @@
+portrait left hero
+portrait right teacher
+
+jumpif met @met_breck == true
+
+message right Shouldn't you be in class right now?
+thought left This is the biology teacher, Mr. Breck.
+thought left He's a pain.
+message right Are you listening to me? Why aren't you in class?
+message left It's passing period.
+message right Then you should be on your way to class. Get going.
+set @met_breck true
+finish
+
+
+label met
+message right Get to class!

@@ -134,9 +134,9 @@ func handle_message(script_line, message_type):
 	var parts = script_line.split(" ", true, 2)
 	if parts[1] == "left":
 		$MessageBubble.flip_h = false
-		$TextHolder.position.x = 0
+		$TextHolder.position.x = 51
 	elif parts[1] == "right":
-		$TextHolder.position.x = 61
+		$TextHolder.position.x = 8
 		$MessageBubble.flip_h = true
 	else:
 		print_debug("can't recognize '" + parts[1] + "'")
