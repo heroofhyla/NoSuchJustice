@@ -1,0 +1,11 @@
+portrait left hero
+portrait right buddy
+message left Why the heck are there two of you?
+message right Huh? What do you mean?
+message left I mean there's two of you.
+message right Oh, right. That.
+message right Well, you see, I read this really funny joke.
+message right Now I'm *beside* myself with laughter.
+message right Get it? Beside myself?
+message left ...
+message left That's not funny.

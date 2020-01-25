@@ -44,5 +44,6 @@ event_script = "buddy_1"
 
 [node name="Buddy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 569.004, 320.419 )
+event_script = "buddy_2"
 
 [node name="EventSystem" parent="." instance=ExtResource( 4 )]
