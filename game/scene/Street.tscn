@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://img/street.png" type="Texture" id=1]
-[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://img/street.png" type="Texture" id=2]
+[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 74.0399, 231.349 )
@@ -42,6 +43,9 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 385.522 ],
 "_edit_vertical_guides_": [ 1106.29 ]
 }
+
+[node name="Autorun" parent="." instance=ExtResource( 1 )]
+event_script = "street_intro"
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 z_index = 2000
@@ -96,23 +100,23 @@ shape = SubResource( 10 )
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="Hero" parent="." instance=ExtResource( 2 )]
+[node name="Hero" parent="." instance=ExtResource( 3 )]
 position = Vector2( 204.777, 335.508 )
 
-[node name="Teleport" parent="." instance=ExtResource( 3 )]
+[node name="Teleport" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1221.52, 373.864 )
 target_map = "Hallway"
 new_x = 25
 new_y = 350
 field_size = Vector2( 32.79, 40 )
 
-[node name="Teleport2" parent="." instance=ExtResource( 3 )]
+[node name="Teleport2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 92.7448, 376.105 )
 target_map = "Apartment"
 new_x = 1117

@@ -23,7 +23,7 @@ func get_field_size():
 	if has_node("CollisionShape2D"):
 		return $CollisionShape2D.get_shape().extents
 func touch_trigger():
-	event_system.load_map(load("res://scene/" + target_map + ".tscn"), new_x, new_y)
+	event_system.load_map(target_map, new_x, new_y)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

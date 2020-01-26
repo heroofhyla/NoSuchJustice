@@ -1,0 +1,8 @@
+jumpif street_intro_done @street_intro_done == true
+wait 1
+portrait left hero
+thought left It's kinda convenient living right across from the school.
+thought left Makes it harder to ditch though.
+thought left Wow, traffic's really backed up today.
+set street_intro_done true
+label street_intro_done

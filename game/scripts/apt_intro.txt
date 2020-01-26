@@ -1,0 +1,8 @@
+jumpif apt_intro_done @apt_intro_done == true
+wait 1
+portrait left hero
+thought left My name's MC.
+thought left This is my dad's apartment.
+thought left I gotta get to school.
+set @apt_intro_done true
+label apt_intro_done

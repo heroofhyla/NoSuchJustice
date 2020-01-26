@@ -13,7 +13,8 @@ onready var current_map = get_node("/root/Game/Map")
 onready var game = get_node("/root/Game")
 enum message_types{
 	MESSAGE,
-	THOUGHT
+	THOUGHT,
+	SHOUT
 }
 var current_script = []
 var current_line = 0
@@ -54,6 +55,21 @@ func handle(script_line):
 		handle_jumpif(script_line)
 	if action == "thought":
 		handle_message(script_line, message_types.THOUGHT)
+	if action == "shout":
+		handle_message(script_line, message_types.SHOUT)
+	if action == "wait":
+		handle_wait(script_line)
+	if action == "teleport":
+		handle_teleport(script_line)
+func handle_wait(script_line):
+	var parts = script_line.split(" ")
+	next_state = states.IDLE
+	state = states.BUSY
+	$Timer.start(int(parts[1]))
+
+func handle_teleport(script_line):
+	var parts = script_line.split(" ")
+	load_map(parts[1], int(parts[2]), int(parts[3]))
 
 func handle_set(script_line):
 	var parts = script_line.split(" ", 3)
@@ -71,7 +87,6 @@ func parse_expression(expr_string):
 			expr_vars.append(trimmed_expr_var)
 			if not trimmed_expr_var in variables:
 				variables[trimmed_expr_var] = null
-		print_debug(expr_vars)
 	expr_string = expr_string.replace("@", "")
 	var error = expression.parse(expr_string, expr_vars)
 	if error != OK:
@@ -126,6 +141,8 @@ func handle_message(script_line, message_type):
 		$MessageBubble.texture = load("res://img/big_message_bubble.png")
 	elif message_type == message_types.THOUGHT:
 		$MessageBubble.texture = load("res://img/big_thought_bubble.png")
+	elif message_type == message_types.SHOUT:
+		$MessageBubble.texture = load("res://img/big_shout_bubble.png")
 	else:
 		print_debug("can't recognize " + message_type)
 	state = states.BUSY
@@ -167,7 +184,7 @@ func set_player_pos(map_instance, new_x, new_y):
 
 func load_map(target_map, new_x, new_y):
 	current_map.queue_free()
-	var map_instance = target_map.instance()
+	var map_instance = load("res://scene/" + target_map + ".tscn").instance()
 	game.call_deferred("add_child", map_instance)
 	call_deferred("set_player_pos", map_instance, new_x, new_y)
 	current_map = map_instance

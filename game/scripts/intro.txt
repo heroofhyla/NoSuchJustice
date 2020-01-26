@@ -1,0 +1,7 @@
+wait 2
+shout right HEY!
+shout right I'M LEAVING FOR WORK!
+shout right DON'T YOU SKIP SCHOOL AGAIN!
+cleanup
+wait 2
+teleport Apartment 319 262

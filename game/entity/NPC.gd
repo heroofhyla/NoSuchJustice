@@ -31,6 +31,5 @@ func _process(delta):
 #	pass
 
 func interact():
-	print_debug(name + " doesn't have a script!!")
 	if event_script:
 		event_system.execute(self,event_script)
