@@ -44,12 +44,14 @@ func _on_Interact_area_entered(area):
 				interactables[0].hide_interactable()
 			interactables.push_front(area_parent)
 			interactables[0].show_interactable()
-
+	elif area.is_in_group("touch_trigger"):
+		area.touch_trigger()
 
 func _on_Interact_area_exited(area):
-	var area_parent = area.get_parent()
 	if area.is_in_group("interact"):
+		var area_parent = area.get_parent()
 		area_parent.hide_interactable()
 		interactables.erase(area_parent)
 		if interactables:
 			interactables[0].show_interactable()
+

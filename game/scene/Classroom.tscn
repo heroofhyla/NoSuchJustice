@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entity/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://img/classroom.png" type="Texture" id=3]
+[ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 283.454, 26.8552 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 245.976, 26.8552 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 33.0867, 257.34 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 38.097, 259.01 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 520.492, 33.5358 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 29.7463, 158.799 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 29.7463, 158.799 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 29.7463, 158.799 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 48.1158, 117.045 )
+
+[node name="Map" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Hero" parent="." instance=ExtResource( 1 )]
+position = Vector2( 186.016, 288.474 )
+
+[node name="Winston" parent="." instance=ExtResource( 2 )]
+position = Vector2( 795.487, 322.605 )
+z_index = 335
+event_script = "winston"
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 374.271, 665.648 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 1021.74, 664.355 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 81.5213, 378.753 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 1228.65, 376.169 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 647.713, 94.5045 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 334.037, 292.282 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 581.224, 290.612 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 869.032, 291.149 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 1068.01, 319.005 )
+shape = SubResource( 9 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+z_index = -200
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Teleport" parent="." instance=ExtResource( 4 )]
+position = Vector2( 714.672, 688.826 )
+target_map = "Hallway"
+new_x = 1022
+new_y = 239

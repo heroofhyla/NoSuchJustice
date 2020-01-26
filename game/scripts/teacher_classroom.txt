@@ -1,0 +1,5 @@
+portrait left hero
+portrait right teacher
+
+message left Hi Mr. Breck.
+message right Sit down. Class is starting.

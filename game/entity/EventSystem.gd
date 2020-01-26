@@ -9,6 +9,8 @@ enum states {
 	READY_SHOW_MESSAGE
 }
 
+onready var current_map = get_node("/root/Game/Map")
+onready var game = get_node("/root/Game")
 enum message_types{
 	MESSAGE,
 	THOUGHT
@@ -79,9 +81,7 @@ func parse_expression(expr_string):
 	var result_vars = []
 	for expr_var in expr_vars:
 		result_vars.append(variables[expr_var])
-	print_debug(result_vars)
 	var result = expression.execute(result_vars)
-	print_debug(result)
 	return result
 	
 func handle_jumpif(script_line):
@@ -162,3 +162,15 @@ func _on_Timer_timeout():
 	state = next_state
 	next_state = states.IDLE
 	pass # Replace with function body.
+
+func set_player_pos(map_instance, new_x, new_y):
+	var player = map_instance.get_node("Hero")
+	player.position = Vector2(new_x, new_y)
+	print_debug('setting position of ' + str(player))
+func load_map(target_map, new_x, new_y):
+	current_map.queue_free()
+	var map_instance = target_map.instance()
+	game.call_deferred("add_child", map_instance)
+	call_deferred("set_player_pos", map_instance, new_x, new_y)
+	current_map = map_instance
+	
