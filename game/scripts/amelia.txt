@@ -1,0 +1,16 @@
+portrait left hero
+portrait right friend
+
+message right Hey hey.
+message right What's up?
+jumpif met @met_amelia == true
+thought left This is Amelia.
+thought left She kicks serious ass, and doesn't take garbage from anyone.
+message right Things alright?
+message left Uh...
+message left Sorry, spaced out there for a second.
+message left Yeah I'm good.
+message right Anyway, what's up?
+set @met_amelia true
+label met
+message left Just keeping it real.
