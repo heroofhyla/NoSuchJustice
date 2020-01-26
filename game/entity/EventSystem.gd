@@ -29,7 +29,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _process(delta):
+func _process(_delta):
 	if state == states.BUSY:
 		return
 	
@@ -124,7 +124,7 @@ func handle_portrait(script_line):
 	else:
 		print_debug("can't recognize '" + parts[1])
 
-func handle_cleanup(script_line):
+func handle_cleanup(_script_line):
 	$RightPortrait.visible = false
 	$LeftPortrait.visible = false
 	$MessageBubble.visible = false
@@ -170,7 +170,7 @@ func load_script(new_script):
 	current_script.append("finish")
 	current_line = 0
 
-func execute(entity, new_script):
+func execute(_entity, new_script):
 	load_script(new_script)
 
 func _on_Timer_timeout():

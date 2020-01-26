@@ -13,6 +13,7 @@ func _ready():
 	pass # Replace with function body.
 
 func set_field_size(size):
+	field_size = size
 	if has_node("CollisionShape2D"):
 		$CollisionShape2D.shape = RectangleShape2D.new()
 		$CollisionShape2D.shape.extents = size

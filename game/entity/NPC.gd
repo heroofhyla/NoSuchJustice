@@ -13,6 +13,7 @@ func _ready():
 	pass # Replace with function body.
 
 func set_sprite(new_sprite):
+	sprite = new_sprite
 	$Sprite.texture = new_sprite
 
 func get_sprite():
@@ -24,10 +25,10 @@ func hide_interactable():
 	$MessageBubble.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Engine.editor_hint:
 		return
-	z_index = position.y
+	z_index = int(position.y)
 #	pass
 
 func interact():

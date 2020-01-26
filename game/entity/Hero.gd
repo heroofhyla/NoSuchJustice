@@ -7,17 +7,18 @@ extends KinematicBody2D
 var speed = 200
 var input_vector = Vector2(0,0)
 var interactables = []
+var move_res = null
 onready var event_system = get_node("/root/Game/EventSystem")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	z_index = position.y
+func _process(_delta):
+	z_index = int(position.y)
 #	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if event_system.state != event_system.states.IDLE:
 		return
 		
@@ -31,7 +32,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_down"):
 		input_vector.y += 1
 	if input_vector != Vector2(0,0):
-		move_and_slide(input_vector.normalized() * speed)
+		move_res = move_and_slide(input_vector.normalized() * speed)
 	if Input.is_action_just_pressed("ui_accept"):
 		if interactables:
 			interactables[0].interact()
