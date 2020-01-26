@@ -34,8 +34,8 @@ extents = Vector2( 48.1158, 117.045 )
 
 [node name="Map" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [  ],
-"_edit_vertical_guides_": [  ]
+"_edit_horizontal_guides_": [ 583.131 ],
+"_edit_vertical_guides_": [ 706.835 ]
 }
 
 [node name="Hero" parent="." instance=ExtResource( 1 )]

@@ -52,8 +52,8 @@ extents = Vector2( 633.958, 33.6869 )
 
 [node name="Map" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 262.856 ],
-"_edit_vertical_guides_": [ 319.23 ]
+"_edit_horizontal_guides_": [ 352.63 ],
+"_edit_vertical_guides_": [ 1093.24 ]
 }
 
 [node name="Collisions" type="StaticBody2D" parent="."]
@@ -133,8 +133,9 @@ position = Vector2( 325.364, 269.185 )
 [node name="Teleport" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1193.57, 354.384 )
 target_map = "Street"
-new_x = 218
-new_y = 382
+new_x = 229
+new_y = 385
+field_size = Vector2( 21.8, 56.81 )
 
 [node name="Autorun" parent="." instance=ExtResource( 4 )]
 event_script = "apt_intro"

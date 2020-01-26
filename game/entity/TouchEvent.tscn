@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entity/TouchEvent.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.8, 133.57 )
+
+[node name="TouchEvent" type="Area2D" groups=[
+"touch_trigger",
+]]
+script = ExtResource( 1 )
+field_size = Vector2( 21.8, 133.57 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

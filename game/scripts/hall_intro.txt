@@ -2,6 +2,6 @@ jumpif hall_intro_done @hall_intro_done == true
 wait 1
 portrait left hero
 thought left J.T.G. Middle School.
-thought left No idea whata it stands for.
+thought left No idea what it stands for.
 set hall_intro_done true
 label hall_intro_done

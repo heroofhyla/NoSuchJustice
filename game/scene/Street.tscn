@@ -40,7 +40,7 @@ extents = Vector2( 74.0399, 54.158 )
 
 [node name="Map" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 385.522 ],
+"_edit_horizontal_guides_": [ 374.418 ],
 "_edit_vertical_guides_": [ 1106.29 ]
 }
 
@@ -112,13 +112,13 @@ position = Vector2( 204.777, 335.508 )
 [node name="Teleport" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1221.52, 373.864 )
 target_map = "Hallway"
-new_x = 25
-new_y = 350
+new_x = 60
+new_y = 361
 field_size = Vector2( 32.79, 40 )
 
 [node name="Teleport2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 92.7448, 376.105 )
 target_map = "Apartment"
-new_x = 1117
-new_y = 350
+new_x = 1095
+new_y = 352
 field_size = Vector2( 24.83, 40 )
