@@ -1,0 +1,8 @@
+jumpif classroom_intro_done @classroom_intro_done == true
+wait 1
+portrait left hero
+thought left Mr. Breck's biology class.
+thought left My seat is the last row by the window.
+thought left Better sit down and wait for class to start.
+set classroom_intro_done true
+label classroom_intro_done

@@ -1,0 +1,21 @@
+portrait left hero
+
+jumpif textbook_quest_finished @have_textbook == true
+jumpif textbook_quest_started @need_textbook == true
+
+label textbook_quest_not_started
+thought left Wait.
+thought left Breck is gonna kill me if I show up without my textbook again.
+thought left Trevor was holding it in his locker for me. I should get it from him.
+set @need_textbook true
+finish
+
+
+label textbook_quest_started
+thought left I still gotta get my textbook from Trevor.
+finish
+
+
+label textbook_quest_finished
+thought left Finally.
+finish

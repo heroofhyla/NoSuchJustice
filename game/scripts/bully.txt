@@ -1,0 +1,10 @@
+portrait left hero
+portrait right bully
+message right We meet again, trash.
+jumpif met @met_les == true
+thought left This is Les. He's a huge pain.
+thought left His parents are loaded. They buy his way out of trouble.
+message right The hell are you looking at?
+set @met_les true
+label met
+message left Hi, Les.

@@ -16,6 +16,7 @@ enum message_types{
 	THOUGHT,
 	SHOUT
 }
+var sub_stack = []
 var current_script = []
 var current_line = 0
 export var state = states.IDLE
@@ -43,24 +44,29 @@ func handle(script_line):
 	var action = script_line.split(" ")[0]
 	if action == "portrait":
 		handle_portrait(script_line)
-	if action == "message":
+	elif action == "message":
 		handle_message(script_line, message_types.MESSAGE)
-	if action == "cleanup":
+	elif action == "cleanup":
 		handle_cleanup(script_line)
-	if action == "finish":
+	elif action == "finish":
 		handle_finish(script_line)
-	if action == "set":
+	elif action == "set":
 		handle_set(script_line)
-	if action == "jumpif":
+	elif action == "jumpif":
 		handle_jumpif(script_line)
-	if action == "thought":
+	elif action == "thought":
 		handle_message(script_line, message_types.THOUGHT)
-	if action == "shout":
+	elif action == "shout":
 		handle_message(script_line, message_types.SHOUT)
-	if action == "wait":
+	elif action == "wait":
 		handle_wait(script_line)
-	if action == "teleport":
+	elif action == "teleport":
 		handle_teleport(script_line)
+	elif action == "subif":
+		handle_subif(script_line)
+	elif action == "return":
+		handle_return(script_line)
+
 func handle_wait(script_line):
 	var parts = script_line.split(" ")
 	next_state = states.IDLE
@@ -72,9 +78,9 @@ func handle_teleport(script_line):
 	load_map(parts[1], int(parts[2]), int(parts[3]))
 
 func handle_set(script_line):
-	var parts = script_line.split(" ", 3)
+	var parts = script_line.split(" ", 2)
 	var variable = parts[1].replace("@","")
-	variables[variable] = parts[2]
+	variables[variable] = parse_expression(parts[2])
 
 func parse_expression(expr_string):
 	var expression = Expression.new()
@@ -98,21 +104,30 @@ func parse_expression(expr_string):
 	return result
 	
 func handle_jumpif(script_line):
-	var parts = script_line.split(" ", 3)
+	var parts = script_line.split(" ", false, 2)
 	var label = parts[1]
 	var expr_string = parts[2]
 	var res = parse_expression(expr_string)
 	
 	if not res:
-		return
+		return false
 	for i in range(0, len(current_script)):
 		var test_line = current_script[i].split(" ")
 		if test_line[0] == "label":
 			if test_line[1] == label:
 				current_line = i
-				return
+				return true
 	print_debug("couldn't find " + label)
 	
+
+func handle_subif(script_line):
+	sub_stack.push_back(current_line)
+	if not handle_jumpif(script_line):
+		sub_stack.pop_back()
+
+func handle_return(_script_line):
+	current_line = sub_stack.pop_back()
+
 func handle_portrait(script_line):
 	var parts = script_line.split(" ")
 	if parts[1] == "right":

@@ -39,7 +39,7 @@ event_script = "hall_intro"
 [node name="Trevor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 348.65, 251.375 )
 z_index = 224
-event_script = "trevor"
+event_script = "trevor_new"
 
 [node name="Breck" parent="." instance=ExtResource( 2 )]
 position = Vector2( 859.899, 243.119 )

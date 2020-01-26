@@ -1,0 +1,40 @@
+portrait left hero
+portrait right buddy
+
+jumpif remind_about_combination @need_combination true
+jumpif ask_about_textbook @need_textbook == true
+
+label normal_convo
+message right Hey there!
+subif introduce @met_trevor != true
+message left Yo.
+finish
+
+
+label ask_about_textbook
+message right Hey there!
+subif introduce @met_trevor != true
+message left Hey Trevor. I think you still have my bio textbook.
+message left Can I get it back?
+message right Aw, jeez.
+message left That doesn't sound good.
+message right It's in my locker, but I forgot the combination again.
+message left Don't you have it written down somewhere?
+message right Hmm....
+message right Oh! My brother might know. Can you go ask him?
+message left Alright.
+set @need_combination true
+finish
+
+
+label remind_about_combination
+message right My brother probably knows my locker combination.
+message right You'll need to get it from him if you want your bio textbook.
+finish
+
+
+label introduce
+thought left This is Trevor.
+thought left He and his brother Winston live next door.
+set @met_trevor true
+return
