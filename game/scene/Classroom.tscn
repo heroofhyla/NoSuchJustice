@@ -98,3 +98,4 @@ position = Vector2( 714.672, 688.826 )
 target_map = "Hallway"
 new_x = 1022
 new_y = 239
+field_size = Vector2( 45.2, 19.09 )

@@ -21,8 +21,8 @@ extents = Vector2( 633.958, 116.225 )
 
 [node name="Map" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [  ],
-"_edit_vertical_guides_": [  ]
+"_edit_horizontal_guides_": [ 351.709 ],
+"_edit_vertical_guides_": [ 25.6952 ]
 }
 
 [node name="Trevor" parent="." instance=ExtResource( 1 )]
@@ -73,7 +73,15 @@ __meta__ = {
 position = Vector2( 88.9496, 413.572 )
 
 [node name="Teleport" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1017.45, 140.183 )
+position = Vector2( 1028.56, 108.45 )
 target_map = "Classroom"
 new_x = 708
 new_y = 592
+field_size = Vector2( 42.07, 20.36 )
+
+[node name="Teleport2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -44.1186, 354.883 )
+target_map = "Street"
+new_x = 1106
+new_y = 385
+field_size = Vector2( 21.8, 135.65 )

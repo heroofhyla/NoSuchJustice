@@ -56,11 +56,9 @@ func handle(script_line):
 		handle_message(script_line, message_types.THOUGHT)
 
 func handle_set(script_line):
-	print_debug(script_line)
 	var parts = script_line.split(" ", 3)
 	var variable = parts[1].replace("@","")
 	variables[variable] = parts[2]
-	print_debug(variable + " => " + variables[variable])
 
 func parse_expression(expr_string):
 	var expression = Expression.new()
@@ -166,7 +164,7 @@ func _on_Timer_timeout():
 func set_player_pos(map_instance, new_x, new_y):
 	var player = map_instance.get_node("Hero")
 	player.position = Vector2(new_x, new_y)
-	print_debug('setting position of ' + str(player))
+
 func load_map(target_map, new_x, new_y):
 	current_map.queue_free()
 	var map_instance = target_map.instance()
