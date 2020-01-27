@@ -1,0 +1,8 @@
+jumpif hallway_fight_teleport @day2start == true
+
+teleport Hallway 60 361
+finish
+
+
+label hallway_fight_teleport
+teleport HallwayFight 60 361

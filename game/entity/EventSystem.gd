@@ -11,6 +11,7 @@ enum states {
 
 onready var current_map = get_node("/root/Game/Map")
 onready var game = get_node("/root/Game")
+onready var npc = load("res://entity/NPC.tscn")
 enum message_types{
 	MESSAGE,
 	THOUGHT,
@@ -72,7 +73,17 @@ func handle(script_line):
 		handle_reveal(script_line)
 	elif action == "hideportrait":
 		handle_hideportrait(script_line)
+	elif action == "addnpc":
+		handle_addnpc(script_line)
 
+func handle_addnpc(script_line):
+	var parts = script_line.split(" ")
+	var new_npc = npc.instance()
+	get_node("/root/Game/Map").add_child(new_npc)
+	new_npc.get_node("Sprite").texture = load("res://img/" + parts[1] + ".png")
+	new_npc.position.x = int(parts[2])
+	new_npc.position.y = int(parts[3])
+	
 func handle_hideportrait(script_line):
 	var parts = script_line.split(" ")
 	if parts[1] == "right":
@@ -213,6 +224,8 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func set_player_pos(map_instance, new_x, new_y):
+	if not map_instance.has_node("Hero"):
+		return
 	var player = map_instance.get_node("Hero")
 	player.position = Vector2(new_x, new_y)
 

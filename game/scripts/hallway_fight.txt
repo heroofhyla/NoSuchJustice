@@ -1,0 +1,44 @@
+wait 1
+portrait left hero
+thought left What's going on?
+cleanup
+wait 1
+portrait left friend
+portrait right bully
+message left I'm gonna kick your ass, Les!
+message left You can't keep treating people like this.
+message right Do you know who the hell I am?
+message right My family OWNS this school!
+message left Your mommy's not here to protect you now though, is she?
+message left Nothing to stop me punching that stupid face in.
+message right ...
+cleanup
+wait 1
+shout left THWACK!
+wait 1
+portrait left hero
+thought left She did it!
+thought left She clocked him right on the jaw!
+portrait left friend
+portrait right bully
+message right Owww!!
+cleanup
+wait 1
+addnpc teacher 1020 245
+wait 1
+portrait right teacher
+message right What the hell is going on here!?
+portrait left bully
+message left Amelia just came up to me out of nowhere!
+message left She punched me!
+portrait left friend
+message left He deserved it!
+message left He's been terrorizing the school all semester!
+message right Amelia, you're coming with me to the principal's office.
+portrait left bully
+message right Les, you go to the nurse and see if anything's broken.
+cleanup
+wait 1
+blackout
+wait 1
+teleport HallwayPostFight 60 361

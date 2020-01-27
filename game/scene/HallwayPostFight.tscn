@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://img/hallway.png" type="Texture" id=2]
+[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entity/NPC.tscn" type="PackedScene" id=4]
+[ext_resource path="res://img/student.png" type="Texture" id=5]
+
+[node name="Map" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 245.817 ],
+"_edit_vertical_guides_": [ 1020.84 ]
+}
+
+[node name="Autorun" parent="." instance=ExtResource( 1 )]
+event_script = "hallway_post_fight"
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Hero" parent="." instance=ExtResource( 3 )]
+position = Vector2( 113.422, 437.701 )
+
+[node name="NPC3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 798.07, 377.051 )
+
+[node name="NPC4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 717.592, 281.41 )
+
+[node name="NPC7" parent="NPC4" instance=ExtResource( 4 )]
+position = Vector2( -33.8245, 92.1418 )
+sprite = ExtResource( 5 )

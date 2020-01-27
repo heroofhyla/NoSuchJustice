@@ -26,6 +26,6 @@ message right Begin.
 cleanup
 wait 1
 blackout
-wait 1
+wait 3
 set @had_class true
 teleport Classroom 187 256

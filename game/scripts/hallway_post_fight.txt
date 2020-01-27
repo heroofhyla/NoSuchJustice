@@ -1,0 +1,12 @@
+reveal
+wait 1
+portrait left hero
+thought left This is messed up.
+thought left Les deserved to get thrashed. He's a monster.
+thought left Amelia's probably in huge trouble.
+thought left I have a feeling things are about to get much, much worse.
+cleanup
+wait 2
+blackout
+wait 2
+teleport ToBeContinued 0 0

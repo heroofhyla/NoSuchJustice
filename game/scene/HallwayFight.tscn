@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://img/hallway.png" type="Texture" id=2]
+[ext_resource path="res://entity/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://img/student.png" type="Texture" id=4]
+[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=5]
+[ext_resource path="res://img/friend.png" type="Texture" id=6]
+[ext_resource path="res://img/bully.png" type="Texture" id=7]
+
+[node name="Map" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 245.817 ],
+"_edit_vertical_guides_": [ 1020.84 ]
+}
+
+[node name="Autorun" parent="." instance=ExtResource( 1 )]
+event_script = "hallway_fight"
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="NPC5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 377.017, 464.527 )
+sprite = ExtResource( 4 )
+
+[node name="NPC6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 670.938, 473.858 )
+sprite = ExtResource( 4 )
+
+[node name="NPC7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 638.28, 189.268 )
+sprite = ExtResource( 4 )
+
+[node name="NPC8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 806.234, 370.053 )
+sprite = ExtResource( 4 )
+
+[node name="NPC9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 305.87, 428.37 )
+sprite = ExtResource( 4 )
+
+[node name="NPC10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 386.348, 294.24 )
+sprite = ExtResource( 4 )
+
+[node name="NPC11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 766.579, 295.406 )
+sprite = ExtResource( 4 )
+
+[node name="NPC12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 869.218, 413.208 )
+sprite = ExtResource( 4 )
+
+[node name="Hero" parent="." instance=ExtResource( 5 )]
+position = Vector2( 113.422, 437.701 )
+
+[node name="NPC" parent="." instance=ExtResource( 3 )]
+position = Vector2( 521.645, 349.059 )
+sprite = ExtResource( 6 )
+
+[node name="NPC2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 593.958, 350.225 )
+sprite = ExtResource( 7 )
+
+[node name="NPC3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1168.97, 451.697 )
+
+[node name="NPC4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 192.734, 330.397 )
