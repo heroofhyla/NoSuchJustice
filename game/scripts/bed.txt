@@ -1,0 +1,19 @@
+jumpif not_time @day2start == true
+jumpif go_to_sleep @should_go_to_bed == true
+
+label not_time
+portrait left hero
+thought left Can't go to bed right now. Gotta go to school.
+finish
+
+
+label go_to_sleep
+portrait left hero
+thought left I'm exhausted.
+cleanup
+wait 1
+blackout
+wait 3
+reveal
+set @day2start true
+finish

@@ -1,6 +1,9 @@
+## Winston, the brother in the classroom.
+
 portrait left hero
 portrait right buddy
 
+jumpif les_sucks @got_book_back == true
 jumpif memory_comments @have_textbook == true
 jumpif remind_combo @know_combination == true
 jumpif ask_for_combo @need_combination == true
@@ -30,6 +33,11 @@ finish
 
 label memory_comments
 message right Let's hope he doesn't forget the combination again.
+finish
+
+
+label les_sucks
+message right Les and Mr. Breck seem to be getting worse all the time.
 finish
 
 

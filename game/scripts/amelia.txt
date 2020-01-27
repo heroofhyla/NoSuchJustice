@@ -1,16 +1,42 @@
 portrait left hero
 portrait right friend
 
+jumpif post_vent_chat @amelia_vented == true
+jumpif post_destroy_chat @need_to_chat_amelia == true
+
+label idle_chat
 message right Hey hey.
+subif introduction @met_amelia != true
 message right What's up?
-jumpif met @met_amelia == true
+message left Just keeping it real.
+finish
+
+
+label post_destroy_chat
+message right Hey.
+subif introduction @met_amelia != true
+message right That was messed up.
+message right Les is the worst. Sorry he's made you his target.
+message left It's not like I can do anything about it.
+message left You know how much money his parents donated this year?
+message left He can get away with anything.
+message right It's just not fair.
+message right Anyway, have a good night. I'll see you tomorrow.
+message left See you.
+set @amelia_vented true
+finish
+
+
+label introduction
 thought left This is Amelia.
 thought left She kicks serious ass, and doesn't take garbage from anyone.
 message right Things alright?
 message left Uh...
 message left Sorry, spaced out there for a second.
 message left Yeah I'm good.
-message right Anyway, what's up?
 set @met_amelia true
-label met
-message left Just keeping it real.
+return
+
+
+label post_vent_chat
+message right There's got to be a way to get back at Les.

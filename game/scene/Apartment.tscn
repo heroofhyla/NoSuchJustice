@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://img/apartment.png" type="Texture" id=1]
-[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entity/TouchEvent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 251.819, 33.7484 )
@@ -57,6 +58,7 @@ __meta__ = {
 }
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+editor/display_folded = true
 visible = false
 z_index = 2000
 
@@ -128,15 +130,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Hero" parent="." instance=ExtResource( 2 )]
+[node name="TouchEvent" parent="." instance=ExtResource( 2 )]
+position = Vector2( 157.081, 214.201 )
+event_script = "bed"
+field_size = Vector2( 21.8, 21.69 )
+
+[node name="Hero" parent="." instance=ExtResource( 3 )]
 position = Vector2( 325.364, 269.185 )
 
-[node name="Teleport" parent="." instance=ExtResource( 3 )]
+[node name="Teleport" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1193.57, 354.384 )
 target_map = "Street"
 new_x = 229
 new_y = 385
 field_size = Vector2( 21.8, 56.81 )
 
-[node name="Autorun" parent="." instance=ExtResource( 4 )]
+[node name="Autorun" parent="." instance=ExtResource( 5 )]
 event_script = "apt_intro"

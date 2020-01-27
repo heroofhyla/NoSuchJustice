@@ -1,0 +1,9 @@
+jumpif chat_reminder @need_to_chat_amelia  != @amelia_vented
+
+teleport Street 1106 374
+finish
+
+
+label chat_reminder
+portrait left hero
+thought left I need to talk to Amelia before leaving.

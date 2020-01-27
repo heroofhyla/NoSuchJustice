@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entity/TouchEvent.tscn" type="PackedScene" id=6]
 [ext_resource path="res://img/bully.png" type="Texture" id=7]
+[ext_resource path="res://img/student.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 283.454, 26.8552 )
@@ -116,3 +117,11 @@ field_size = Vector2( 12.34, 11.63 )
 position = Vector2( 436.732, 172.162 )
 event_script = "bully"
 sprite = ExtResource( 7 )
+
+[node name="NPC2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 664.655, 151.121 )
+sprite = ExtResource( 8 )
+
+[node name="NPC3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1138.56, 601.701 )
+sprite = ExtResource( 8 )

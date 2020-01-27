@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entity/NPC.tscn" type="PackedScene" id=2]
@@ -8,24 +8,28 @@
 [ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entity/Teleport.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entity/TouchEvent.tscn" type="PackedScene" id=8]
+[ext_resource path="res://img/student.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 294.443, 102.232 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 117.085, 19.8587 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 26.4044, 142 )
+extents = Vector2( 334.341, 102.232 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 83.6242, 99.569 )
+extents = Vector2( 33.6978, 187.956 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 97.3743, 99.569 )
+extents = Vector2( 117.085, 19.8587 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 633.958, 116.225 )
+extents = Vector2( 26.4044, 142 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 83.6242, 99.569 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 97.3743, 99.569 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 683.898, 116.225 )
 
 [node name="Map" type="Node2D"]
 __meta__ = {
@@ -54,32 +58,35 @@ event_script = "amelia"
 sprite = ExtResource( 4 )
 
 [node name="Collisions" type="StaticBody2D" parent="."]
-visible = false
 z_index = 2000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2( 300.652, 101.443 )
+position = Vector2( 270.724, 105.524 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( -91.136, 338.148 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 698.535, -24.3991 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 1316.64, 351.277 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 886.448, 99.9334 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 1175.94, 102.518 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
-position = Vector2( 642.165, 610.704 )
-shape = SubResource( 4 )
+position = Vector2( 640.805, 610.704 )
+shape = SubResource( 7 )
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
@@ -99,13 +106,6 @@ new_x = 700
 new_y = 583
 field_size = Vector2( 42.07, 20.36 )
 
-[node name="Teleport2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -44.1186, 354.883 )
-target_map = "Street"
-new_x = 1106
-new_y = 374
-field_size = Vector2( 21.8, 135.65 )
-
 [node name="TouchEvent" parent="." instance=ExtResource( 8 )]
 position = Vector2( 697.18, 26.0658 )
 event_script = "no_reason"
@@ -115,3 +115,11 @@ field_size = Vector2( 90.92, 22.37 )
 position = Vector2( 1241.26, 349.924 )
 event_script = "no_reason"
 field_size = Vector2( 29.15, 117.66 )
+
+[node name="TouchEvent3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -31.2123, 362.336 )
+event_script = "hallway_west_teleport"
+
+[node name="NPC" parent="." instance=ExtResource( 2 )]
+position = Vector2( 493.652, 466.86 )
+sprite = ExtResource( 9 )

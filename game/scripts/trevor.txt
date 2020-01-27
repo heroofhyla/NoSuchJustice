@@ -3,6 +3,7 @@
 portrait left hero
 portrait right buddy
 
+jumpif les_sucks @got_book_back == true
 jumpif give_thanks @have_textbook == true
 jumpif give_combination @know_combination == true
 jumpif remind_about_combination @need_combination == true
@@ -55,6 +56,15 @@ finish
 label give_thanks
 message right Thanks for getting me my locker combo.
 message left No problem. Thanks for keeping my textbooks safe from Les.
+finish
+
+
+label les_sucks
+message right So Les wound up ruining your books again, huh.
+message right I guess hiding them in my locker wasn't enough.
+message right I'm really sorry.
+message left Not your fault.
+message right Still ...
 finish
 
 

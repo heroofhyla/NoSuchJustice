@@ -1,6 +1,7 @@
 portrait left hero
 portrait right teacher
 
+jumpif go_home_order @got_book_back == true
 jumpif met @met_breck == true
 
 message right Shouldn't you be in class right now?
@@ -15,3 +16,8 @@ finish
 
 label met
 message right Get to class!
+finish
+
+
+label go_home_order
+message right Class is over. Go home.

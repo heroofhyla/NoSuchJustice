@@ -19,7 +19,8 @@ func set_sprite(new_sprite):
 func get_sprite():
 	return $Sprite.texture
 func show_interactable():
-	$MessageBubble.visible = true
+	if event_script:
+		$MessageBubble.visible = true
 
 func hide_interactable():
 	$MessageBubble.visible = false

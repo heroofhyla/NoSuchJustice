@@ -1,3 +1,5 @@
+jumpif apt_intro_done @should_go_to_bed == true
+jumpif first_night_retrospective @amelia_vented == true
 jumpif apt_intro_done @apt_intro_done == true
 wait 1
 portrait left hero
@@ -6,3 +8,14 @@ thought left This is my dad's apartment.
 thought left I gotta get to school.
 set @apt_intro_done true
 label apt_intro_done
+finish
+
+
+label first_night_retrospective
+wait 1
+portrait left hero
+thought left What a crappy day.
+thought left Dad won't be home for a couple hours.
+thought left I should just go to bed early.
+set @should_go_to_bed true
+finish
