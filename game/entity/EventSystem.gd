@@ -218,7 +218,7 @@ func handle_message(script_line, message_type):
 func load_script(new_script):
 	current_script = []
 	var f = File.new()
-	f.open("scripts/" + new_script + ".txt", File.READ)
+	f.open("res://scripts/" + new_script + ".txt", File.READ)
 	while not f.eof_reached():
 		current_script.append(f.get_line())
 	current_script.append("finish")

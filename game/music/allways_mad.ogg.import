@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/allways_mad.ogg-a8c9117dd8a1de1f5165f26a115010db.oggstr"
+
+[deps]
+
+source_file="res://music/allways_mad.ogg"
+dest_files=[ "res://.import/allways_mad.ogg-a8c9117dd8a1de1f5165f26a115010db.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
