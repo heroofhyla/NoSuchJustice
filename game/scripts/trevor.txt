@@ -1,3 +1,5 @@
+## Trevor, the brother in the hallway.
+
 portrait left hero
 portrait right buddy
 
@@ -38,9 +40,9 @@ finish
 label give_combination
 message right Any luck with the combination?
 message left Yeah, Winston knew it.
-message left It's 23-19-49
+message left It's 23-19-49.
 message right Oh yeah, that rings a bell!
-message right One sec, I'll get your book
+message right One sec, I'll get your book.
 blackout
 wait 2
 reveal

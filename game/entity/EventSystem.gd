@@ -66,6 +66,16 @@ func handle(script_line):
 		handle_subif(script_line)
 	elif action == "return":
 		handle_return(script_line)
+	elif action == "blackout":
+		handle_blackout(script_line)
+	elif action == "reveal":
+		handle_reveal(script_line)
+
+func handle_blackout(_script_line):
+	$Blackout.visible = true
+
+func handle_reveal(_script_line):
+	$Blackout.visible = false
 
 func handle_wait(script_line):
 	var parts = script_line.split(" ")

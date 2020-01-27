@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entity/EventSystem.gd" type="Script" id=1]
 [ext_resource path="res://font/mplus-1m-bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://img/buddy_portrait.png" type="Texture" id=3]
 [ext_resource path="res://img/big_message_bubble.png" type="Texture" id=4]
+[ext_resource path="res://img/black_screen.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -51,4 +52,10 @@ flip_h = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Blackout" type="Sprite" parent="."]
+visible = false
+position = Vector2( 640, 360 )
+z_index = 4096
+texture = ExtResource( 5 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
