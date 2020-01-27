@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://entity/Autorun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://img/classroom.png" type="Texture" id=2]
+[ext_resource path="res://entity/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://img/bully.png" type="Texture" id=4]
+[ext_resource path="res://entity/Hero.tscn" type="PackedScene" id=5]
+[ext_resource path="res://img/teacher.png" type="Texture" id=6]
+[ext_resource path="res://img/friend.png" type="Texture" id=7]
+[ext_resource path="res://img/student.png" type="Texture" id=8]
+
+[node name="Map" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 255.543 ],
+"_edit_vertical_guides_": [ 1024.74 ]
+}
+
+[node name="Autorun" parent="." instance=ExtResource( 1 )]
+event_script = "lesson_1"
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="NPC5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 532.068, 311.511 )
+sprite = ExtResource( 4 )
+
+[node name="Hero" parent="." instance=ExtResource( 5 )]
+position = Vector2( 257.638, 176.406 )
+
+[node name="NPC" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1173.42, 326.543 )
+sprite = ExtResource( 6 )
+
+[node name="NPC2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 278.2, 418.403 )
+
+[node name="NPC3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 807.648, 177.897 )
+
+[node name="NPC4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 809.318, 299.82 )
+sprite = ExtResource( 7 )
+
+[node name="NPC6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 524.113, 442.203 )
+sprite = ExtResource( 8 )
+
+[node name="NPC7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 811.384, 435.522 )
+sprite = ExtResource( 8 )
+
+[node name="NPC8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 515.762, 181.654 )
+sprite = ExtResource( 8 )
+
+[node name="NPC9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 276.926, 295.227 )
+sprite = ExtResource( 8 )

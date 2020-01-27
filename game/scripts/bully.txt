@@ -1,5 +1,9 @@
 portrait left hero
 portrait right bully
+
+jumpif mock @got_book_back == true
+jumpif ask_for_book @need_book_back == true
+
 message right We meet again, trash.
 jumpif met @met_les == true
 thought left This is Les. He's a huge pain.
@@ -8,3 +12,35 @@ message right The hell are you looking at?
 set @met_les true
 label met
 message left Hi, Les.
+finish
+
+
+label ask_for_book
+message right Well, looks who it is!
+message left Can I get my book back?
+message right What's the magic word?
+message left Ugh.
+message left Can I PLEASE get my book back?
+message right That's not it.
+message right I mean a real magic word.
+message left Uh ...
+message left "Abracadabra"?
+message left "Sudo?"
+message left "Hocus pocus"?
+message right Ding ding ding!
+message right Alright, you can have you book back.
+message left What did you do to this thing?
+thought left The book is basically ruined.
+message right I spilled a soda.
+message left Into the book?
+message right No, onto my desk.
+message right I used the book to dry it up.
+message left What the hell?
+message right Wonder how much you're gonna have to pay to replace that thing.
+set @got_book_back true
+finish
+
+
+label mock
+message right See you tomorrow, trash.
+finish

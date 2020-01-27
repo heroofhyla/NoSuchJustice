@@ -1,5 +1,6 @@
 portrait left hero
 
+jumpif class_over @had_class == true
 jumpif textbook_quest_finished @have_textbook == true
 jumpif textbook_quest_started @need_textbook == true
 
@@ -17,5 +18,12 @@ finish
 
 
 label textbook_quest_finished
-thought left Finally.
-finish
+thought left Class is starting.
+cleanup
+wait 1
+blackout
+wait 1
+teleport ClassroomLesson 257 176
+
+
+label class_over

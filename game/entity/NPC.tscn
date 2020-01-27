@@ -18,6 +18,7 @@ position = Vector2( 0, -41.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -3.70633 )
 shape = SubResource( 1 )
 
@@ -29,6 +30,7 @@ texture = ExtResource( 3 )
 [node name="Interact" type="Area2D" parent="." groups=[
 "interact",
 ]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
 position = Vector2( 0, -3.70633 )

@@ -4,7 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
-var speed = 800
+var speed = 200
 var input_vector = Vector2(0,0)
 var interactables = []
 var move_res = null

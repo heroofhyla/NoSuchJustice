@@ -1,0 +1,31 @@
+reveal
+wait 1
+portrait right teacher
+message right Alright, everybody shut up and get your textbooks out.
+message right Today you'll be reading chapter 12.
+message right I assume you forgot your book again today, MC.
+message right So just sit quietly.
+portrait left hero
+message left Actually, I have it with me.
+message right I see.
+cleanup
+wait 1
+portrait left bully
+message left Mr. Breck, I forgot my book.
+set @met_les true
+portrait right teacher
+message right Well that's no problem.
+portrait left hero
+message right MC, you don't need your book. Lend it to Les.
+message left But-
+message right Do you want another detention?
+hideportrait left
+message right You have 40 minutes to read the chapter.
+message right After that, there will be a closed-book quiz.
+message right Begin.
+cleanup
+wait 1
+blackout
+wait 1
+set @had_class true
+teleport Classroom 187 256

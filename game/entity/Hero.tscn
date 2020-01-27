@@ -15,10 +15,12 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -22.68 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -6.68993 )
 shape = SubResource( 1 )
 
 [node name="Interact" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
 position = Vector2( 0, -6.68993 )

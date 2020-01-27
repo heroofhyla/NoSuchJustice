@@ -70,7 +70,16 @@ func handle(script_line):
 		handle_blackout(script_line)
 	elif action == "reveal":
 		handle_reveal(script_line)
+	elif action == "hideportrait":
+		handle_hideportrait(script_line)
 
+func handle_hideportrait(script_line):
+	var parts = script_line.split(" ")
+	if parts[1] == "right":
+		$RightPortrait.visible = false
+	elif parts[1] == "left":
+		$LeftPortrait.visible = false
+	
 func handle_blackout(_script_line):
 	$Blackout.visible = true
 
