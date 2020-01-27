@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rounder_hallway.ogg-afd02364e9bcde09d5bf5be1209fcfe8.oggstr"
+
+[deps]
+
+source_file="res://music/rounder_hallway.ogg"
+dest_files=[ "res://.import/rounder_hallway.ogg-afd02364e9bcde09d5bf5be1209fcfe8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

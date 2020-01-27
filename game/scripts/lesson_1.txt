@@ -1,4 +1,5 @@
 reveal
+playmusic side_room
 wait 1
 portrait right teacher
 message right Alright, everybody shut up and get your textbooks out.

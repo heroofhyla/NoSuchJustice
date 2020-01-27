@@ -12,6 +12,7 @@ enum states {
 onready var current_map = get_node("/root/Game/Map")
 onready var game = get_node("/root/Game")
 onready var npc = load("res://entity/NPC.tscn")
+onready var music = get_node("/root/Game/Music")
 enum message_types{
 	MESSAGE,
 	THOUGHT,
@@ -75,11 +76,19 @@ func handle(script_line):
 		handle_hideportrait(script_line)
 	elif action == "addnpc":
 		handle_addnpc(script_line)
+	elif action == "playmusic":
+		handle_playmusic(script_line)
 
+func handle_playmusic(script_line):
+	var parts = script_line.split(" ")
+	var song = load("res://music/" + parts[1] + ".ogg")
+	music.stream = song
+	music.play()
+	
 func handle_addnpc(script_line):
 	var parts = script_line.split(" ")
 	var new_npc = npc.instance()
-	get_node("/root/Game/Map").add_child(new_npc)
+	current_map.add_child(new_npc)
 	new_npc.get_node("Sprite").texture = load("res://img/" + parts[1] + ".png")
 	new_npc.position.x = int(parts[2])
 	new_npc.position.y = int(parts[3])

@@ -2,6 +2,8 @@ jumpif apt_intro_done @should_go_to_bed == true
 jumpif first_night_retrospective @amelia_vented == true
 jumpif apt_intro_done @apt_intro_done == true
 wait 1
+playmusic rounder_hallway
+wait 1
 portrait left hero
 thought left My name's MC.
 thought left This is my dad's apartment.

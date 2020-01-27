@@ -29,6 +29,7 @@ message left "Sudo?"
 message left "Hocus pocus"?
 message right Ding ding ding!
 message right Alright, you can have you book back.
+playmusic rounder_hallway
 message left What did you do to this thing?
 thought left The book is basically ruined.
 message right I spilled a soda.
