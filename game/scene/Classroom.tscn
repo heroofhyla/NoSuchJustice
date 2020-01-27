@@ -53,6 +53,7 @@ z_index = 335
 event_script = "winston"
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 374.271, 665.648 )

@@ -48,6 +48,7 @@ __meta__ = {
 event_script = "street_intro"
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+visible = false
 z_index = 2000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
